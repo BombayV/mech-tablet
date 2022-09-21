@@ -1,0 +1,9 @@
+{
+  "name": "resources",
+  "version": "0.0.1",
+  "description": "tablet-game",
+  "main": "index.js",
+  "repository": "https://github.com/BombayV/mech-tablet.git",
+  "author": "BombayV",
+  "license": "GPLv3"
+}
