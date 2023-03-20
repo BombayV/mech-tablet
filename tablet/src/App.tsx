@@ -1,24 +1,26 @@
-import './index.css'
-import './Tablet.css'
-import { Routes, Route } from 'react-router-dom'
-import ThemeOverride from './ThemeOverride'
-import TabletWrapper from './TabletWrapper'
-import Sidebar from './components/Sidebar/Sidebar'
-import Home from './tabs/home/components/Home'
+import { Routes, Route } from 'react-router-dom';
+import { useTablet } from './os/hooks';
+import { Sidebar, Slide } from './components';
+import Home from './pages/home/Home';
+import './App.css';
 
-function App() {
+const App = () => {
+  const { tabletState, toggleTablet } = useTablet();
+
   return (
-    <>
-      <ThemeOverride>
-        <TabletWrapper>
-          <Sidebar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
-        </TabletWrapper>
-      </ThemeOverride>
-    </>
-  )
-}
+    <Slide show={tabletState} duration={500}>
+      <div
+        className={
+          'relative bg-neutral-800 h-[44rem] w-[72rem] rounded-lg shadow-md flex items-center'
+        }
+      >
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Slide>
+  );
+};
 
-export default App
+export default App;

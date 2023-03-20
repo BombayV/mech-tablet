@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   font-family: 'Montserrat', sans-serif, Avenir, Helvetica, Arial;
@@ -28,8 +30,6 @@
   --color-9: #111827;
 
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
 }
 
 a,
