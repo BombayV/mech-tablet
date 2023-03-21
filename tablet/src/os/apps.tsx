@@ -2,7 +2,6 @@ export type TabletApp = {
   id: string;
   path: string;
   locale: string;
-  title: string;
   icon: () => JSX.Element;
 };
 
@@ -11,7 +10,6 @@ export const apps: TabletApp[] = [
     id: 'HOME',
     path: '/',
     locale: 'HOME_APP',
-    title: 'Home',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +31,6 @@ export const apps: TabletApp[] = [
     id: 'ALERTS',
     path: '/alerts',
     locale: 'ALERTS_APP',
-    title: 'Alerts',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +52,6 @@ export const apps: TabletApp[] = [
     id: 'INVOICES',
     path: '/invoices',
     locale: 'INVOICES_APP',
-    title: 'Invoices',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +73,6 @@ export const apps: TabletApp[] = [
     id: 'MESSAGES',
     path: '/messages',
     locale: 'MESSAGES_APP',
-    title: 'Messages',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +94,6 @@ export const apps: TabletApp[] = [
     id: 'VEHICLE_PIECES',
     path: '/vehicle_pieces',
     locale: 'VEHICLE_PIECES_APP',
-    title: 'Vehicle Pieces',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +115,6 @@ export const apps: TabletApp[] = [
     id: 'VEHICLE_LIST',
     path: '/vehicle_list',
     locale: 'VEHICLE_LIST_APP',
-    title: 'Vehicle List',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +136,6 @@ export const apps: TabletApp[] = [
     id: 'VEHICLE_STATS',
     path: '/vehicle_stats',
     locale: 'VEHICLE_STATS_APP',
-    title: 'Vehicle Stats',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +157,6 @@ export const apps: TabletApp[] = [
     id: 'MAP',
     path: '/map',
     locale: 'MAP_APP',
-    title: 'Virtual Map',
     icon: () => (
       <svg
         xmlns="http://www.w3.org/2000/svg"

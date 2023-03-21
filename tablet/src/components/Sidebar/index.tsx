@@ -1,17 +1,18 @@
 import useSidebar from './hooks/useSidebar';
 import { apps } from '../../os/apps';
 import { Link } from 'react-router-dom';
-import {Settings} from "./components/Settings";
+import { Settings } from './components/Settings';
+import { useTranslation } from 'react-i18next';
 
 export const Sidebar = () => {
   const { isOpen, toggleSidebar, arrow } = useSidebar();
-
+  const { t } = useTranslation();
   return (
     <div
       className={
         isOpen
-          ? 'relative bg-neutral-900 h-full rounded-tl-lg rounded-bl-lg w-64 transition-all duration-200'
-          : 'relative bg-neutral-900 h-full rounded-tl-lg rounded-bl-lg w-16 transition-all duration-200'
+          ? 'relative bg-neutral-900 h-full rounded-tl-lg rounded-bl-lg w-72 transition-all duration-200 z-10'
+          : 'relative bg-neutral-900 h-full rounded-tl-lg rounded-bl-lg w-16 transition-all duration-200 z-10'
       }
     >
       <div className={'relative flex flex-col grow items-center w-full pt-2 h-full'}>
@@ -23,7 +24,7 @@ export const Sidebar = () => {
                 src={'https://avatars.githubusercontent.com/u/118932651?s=200&v=4'}
                 alt={'MDT'}
               />
-              <h1 className={'text-lg font-bold'}>OverDrive Labs</h1>
+              <h1 className={'text-lg font-black'}>OverDrive Labs</h1>
             </div>
           ) : (
             <img
@@ -47,12 +48,12 @@ export const Sidebar = () => {
                 key={app.id}
               >
                 {app.icon()}
-                {isOpen && <p className={'text-md text-neutral-100 font-normal'}>{app.title}</p>}
+                {isOpen && <p className={'text-md text-neutral-100 font-semibold'}>{t(`${app.locale}.TITLE`)}</p>}
               </Link>
             );
           })}
         </div>
-        <Settings name={'Mauricio Rivera'} sidebarState={isOpen}/>
+        <Settings name={'Mauricio Rivera'} sidebarState={isOpen} />
       </div>
       <button
         onClick={toggleSidebar}

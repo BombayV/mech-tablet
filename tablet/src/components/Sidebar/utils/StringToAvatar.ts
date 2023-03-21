@@ -15,15 +15,20 @@ const stringToColor = (string: string) => {
   /* eslint-enable no-bitwise */
 
   return color;
-}
+};
 
 const stringToAvatar = (name: string) => {
   const onlyOneName = name.split(' ').length === 1;
 
   return {
     bgcolor: stringToColor(name),
-    name: onlyOneName ? name[0] : name.split(' ').map((n) => n[0]).join(''),
+    name: onlyOneName
+      ? name[0]
+      : name
+          .split(' ')
+          .map((n) => n[0])
+          .join(''),
   };
-}
+};
 
 export default stringToAvatar;

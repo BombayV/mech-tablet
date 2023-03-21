@@ -14,10 +14,12 @@ const App = () => {
           'relative bg-neutral-800 h-[44rem] w-[72rem] rounded-lg shadow-md flex items-center'
         }
       >
-        <Sidebar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <Sidebar/>
+        <div className={`w-full h-full px-8 pt-6 pb-2 relative`}>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+          </Routes>
+        </div>
       </div>
     </Slide>
   );

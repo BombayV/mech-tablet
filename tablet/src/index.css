@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Cairo';
+  font-display: swap;
+  src: url('./assets/Cairo-VariableFont_slnt,wght.ttf');
+}
+
 :root {
-  font-family: 'Montserrat', sans-serif, Avenir, Helvetica, Arial;
+  font-family: 'Cairo', sans-serif, Avenir, Helvetica, Arial;
   font-size: 16px;
   font-weight: 400;
   margin: 0;

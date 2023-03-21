@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './locale/en.json';
 import es from './locale/es.json';
-import config from './assets/config.json';
+import config from '../public/config.json';
 
 const resources = {
   en,

@@ -1,5 +1,29 @@
 {
   "translation": {
-    "TITLE": "Hello World"
+    "TITLE": "Hello World",
+    "HOME_APP": {
+      "TITLE": "Home"
+    },
+    "ALERTS_APP": {
+      "TITLE": "Alerts"
+    },
+    "INVOICES_APP": {
+      "TITLE": "Invoices"
+    },
+    "MESSAGES_APP": {
+      "TITLE": "Messages"
+    },
+    "VEHICLE_PIECES_APP": {
+      "TITLE": "Vehicle Pieces"
+    },
+    "VEHICLE_LIST_APP": {
+      "TITLE": "Vehicle List"
+    },
+    "VEHICLE_STATS_APP": {
+      "TITLE": "Vehicle Stats"
+    },
+    "MAP_APP": {
+      "TITLE": "Virtual Map"
+    }
   }
 }
