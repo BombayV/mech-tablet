@@ -15,7 +15,7 @@ const App = () => {
         }
       >
         <Sidebar/>
-        <div className={`w-full h-full px-8 pt-6 pb-2 relative`}>
+        <div className={`w-full h-full px-8 pt-8 pb-4 relative`}>
           <Routes>
             <Route path="/" element={<Home />}/>
           </Routes>

@@ -24,7 +24,7 @@ export const Sidebar = () => {
                 src={'https://avatars.githubusercontent.com/u/118932651?s=200&v=4'}
                 alt={'MDT'}
               />
-              <h1 className={'text-lg font-black'}>OverDrive Labs</h1>
+              <h1 className={'text-lg font-black text-amber-100'}>OverDrive Labs</h1>
             </div>
           ) : (
             <img
@@ -48,7 +48,7 @@ export const Sidebar = () => {
                 key={app.id}
               >
                 {app.icon()}
-                {isOpen && <p className={'text-md text-neutral-100 font-semibold'}>{t(`${app.locale}.TITLE`)}</p>}
+                {isOpen && <p className={'text-md text-amber-50 text-opacity-90 font-bold'}>{t(`${app.locale}.TITLE`)}</p>}
               </Link>
             );
           })}
@@ -58,7 +58,7 @@ export const Sidebar = () => {
       <button
         onClick={toggleSidebar}
         className={
-          'absolute top-1/2 -right-4 h-8 w-8 p-1.5 rounded-full bg-amber-500 hover:bg-amber-600 tarnsition-colors duration-200 shadow-sm'
+          'absolute top-1/2 -right-1 translate-x-1/2 h-8 w-8 p-1.5 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors duration-200 shadow-sm'
         }
       >
         {arrow}

@@ -18,7 +18,6 @@ export const Settings = ({ ...props }: { name: string; sidebarState: boolean }) 
   const [popoverState, setPopoverState] = useState<boolean>(false);
 
   const setPopover = () => {
-    console.log(popoverState)
     setPopoverState(!popoverState);
   }
 
@@ -26,21 +25,21 @@ export const Settings = ({ ...props }: { name: string; sidebarState: boolean }) 
     <div
       className={`flex items-center ${
         sidebarState ? 'justify-between' : 'justify-center'
-      } h-16 bg-neutral-700 rounded-bl-lg w-full px-2 gap-x-2`}
+      } h-16 bg-neutral-700 bg-opacity-60 rounded-bl-lg w-full px-2 gap-x-2`}
     >
       {sidebarState ? (
-        <div className={`relative flex items-center gap-x-2 grow group hover:bg-neutral-800 px-2 py-1 rounded transition-colors duration-200 cursor-pointer ${popoverState && 'bg-neutral-800'}`} onClick={setPopover}>
+        <div className={`relative flex items-center gap-x-2 grow group hover:bg-neutral-800 px-2 py-1 rounded transition-colors duration-200 cursor-pointer ${popoverState && 'bg-neutral-800 bg-opacity-80'}`} onClick={setPopover}>
           <StyledBadge name={name} state={false} />
           <div className={`flex flex-col items-start`}>
-            <p className={`text-base font-semibold`}>{name}</p>
-            <p className={`text-sm font-light`}>Boss</p>
+            <p className={`text-base font-semibold text-neutral-100`}>{name}</p>
+            <p className={`text-sm font-light text-neutral-400`}>Boss</p>
           </div>
           <Transition nodeRef={nodeRef} in={popoverState} timeout={100} unmountOnExit={true}>
             {(state: string) => (
               <div ref={nodeRef} style={{
                 ...transitionStyles[state],
                 transition: `200ms ease`,
-              }} className={'absolute flex flex-col items-start gap-y-0.5 px-2 py-2 bg-neutral-800 w-full bottom-[105%] -translate-y-2 rounded font-semibold left-0'}>
+              }} className={'absolute flex flex-col items-start gap-y-0.5 px-2 py-2 bg-neutral-800 bg-opacity-80 w-full bottom-[105%] -translate-y-2 rounded font-semibold left-0'}>
                 <button type="button" className={`hover:bg-neutral-900 transition-colors duration-200 w-full rounded py-1 px-2`}>
                   <span className={`before:block before:w-3 before:h-3 before:rounded-full before:relative before:bg-emerald-600 flex items-center gap-x-2`}>Available</span>
                 </button>
@@ -62,7 +61,7 @@ export const Settings = ({ ...props }: { name: string; sidebarState: boolean }) 
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-5 h-5"
+          className="w-5 h-5 fill-neutral-300"
         >
           <path
             fillRule="evenodd"
