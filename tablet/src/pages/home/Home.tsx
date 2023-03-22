@@ -1,5 +1,4 @@
 import { withTranslation } from "react-i18next";
-import {useLocation} from "react-router-dom";
 
 const Home = ({t}: {
   t: (key: string) => string;
