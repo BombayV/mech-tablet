@@ -29,7 +29,7 @@ export const Settings = ({ ...props }: { name: string; sidebarState: boolean }) 
     >
       {sidebarState ? (
         <div className={`relative flex items-center gap-x-2 grow group hover:bg-neutral-800 px-2 py-1 rounded transition-colors duration-200 cursor-pointer ${popoverState && 'bg-neutral-800 bg-opacity-80'}`} onClick={setPopover}>
-          <StyledBadge name={name} state={false} />
+          <StyledBadge name={name} state={'settings'} />
           <div className={`flex flex-col items-start`}>
             <p className={`text-base font-semibold text-neutral-100`}>{name}</p>
             <p className={`text-sm font-light text-neutral-400`}>Boss</p>

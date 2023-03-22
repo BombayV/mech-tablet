@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import { useTablet } from './os/hooks';
 import { Sidebar, Slide } from './components';
-import Home from './pages/home/Home';
+import { apps } from './os/apps';
+import { TabletApp } from './os/apps';
 import './App.css';
+
 
 const App = () => {
   const { tabletState, toggleTablet } = useTablet();
@@ -17,7 +19,13 @@ const App = () => {
         <Sidebar/>
         <div className={`w-full h-full px-8 pt-8 pb-4 relative`}>
           <Routes>
-            <Route path="/" element={<Home />}/>
+            {
+              apps.map((app: TabletApp) => {
+                return (
+                  <Route path={app.path} element={app.component()} key={app.id}/>
+                )
+              })
+            }
           </Routes>
         </div>
       </div>

@@ -3,10 +3,15 @@ import { apps } from '../../os/apps';
 import { Link } from 'react-router-dom';
 import { Settings } from './components/Settings';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from "react-router-dom";
 
 export const Sidebar = () => {
   const { isOpen, toggleSidebar, arrow } = useSidebar();
   const { t } = useTranslation();
+
+  // Get the current route
+  const currentPath = useLocation().pathname;
+
   return (
     <div
       className={
@@ -40,8 +45,8 @@ export const Sidebar = () => {
               <Link
                 className={
                   isOpen
-                    ? 'flex items-center gap-x-3 h-12 w-full rounded hover:bg-neutral-800 transition-colors duration-200 px-3'
-                    : 'flex flex-col items-center justify-center h-12 rounded w-12 hover:bg-neutral-800 transition-colors duration-200'
+                    ? `flex items-center gap-x-3 h-12 w-full rounded hover:bg-neutral-800 transition-colors duration-200 px-3 ${currentPath === app.path ? 'bg-neutral-800' : ''}`
+                    : `flex flex-col items-center justify-center h-12 rounded w-12 hover:bg-neutral-800 transition-colors duration-200 ${currentPath === app.path ? 'bg-neutral-800' : ''}`
                 }
                 to={app.path}
                 id={app.id}

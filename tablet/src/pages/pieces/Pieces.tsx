@@ -1,7 +1,7 @@
 import { withTranslation } from "react-i18next";
 import {StyledBadge} from "../../components/Sidebar/components/StyledBadge";
 
-const Home = ({t}: {
+const Pieces = ({t}: {
   t: (key: string) => string;
 }) => {
 
@@ -23,4 +23,4 @@ const Home = ({t}: {
   );
 };
 
-export default withTranslation()(Home);
+export default withTranslation()(Pieces);
