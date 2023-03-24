@@ -21,6 +21,9 @@
     "VEHICLE_STATS_APP": {
       "TITLE": "Vehicle Stats"
     },
+    "VEHICLE_MODIFIER_APP": {
+      "TITLE": "Vehicle Modifier"
+    },
     "MAP_APP": {
       "TITLE": "Virtual Map"
     }

@@ -3,7 +3,7 @@ import { apps } from '../../os/apps';
 import { Link } from 'react-router-dom';
 import { Settings } from './components/Settings';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 export const Sidebar = () => {
   const { isOpen, toggleSidebar, arrow } = useSidebar();
@@ -45,15 +45,23 @@ export const Sidebar = () => {
               <Link
                 className={
                   isOpen
-                    ? `flex items-center gap-x-3 h-12 w-full rounded hover:bg-neutral-800 transition-colors duration-200 px-3 ${currentPath === app.path ? 'bg-neutral-800' : ''}`
-                    : `flex flex-col items-center justify-center h-12 rounded w-12 hover:bg-neutral-800 transition-colors duration-200 ${currentPath === app.path ? 'bg-neutral-800' : ''}`
+                    ? `flex items-center gap-x-3 h-12 w-full rounded hover:bg-neutral-800 transition-colors duration-200 px-3 ${
+                        currentPath === app.path ? 'bg-neutral-800' : ''
+                      }`
+                    : `flex flex-col items-center justify-center h-12 rounded w-12 hover:bg-neutral-800 transition-colors duration-200 ${
+                        currentPath === app.path ? 'bg-neutral-800' : ''
+                      }`
                 }
                 to={app.path}
                 id={app.id}
                 key={app.id}
               >
                 {app.icon()}
-                {isOpen && <p className={'text-md text-amber-50 text-opacity-90 font-bold'}>{t(`${app.locale}.TITLE`)}</p>}
+                {isOpen && (
+                  <p className={'text-md text-amber-50 text-opacity-90 font-bold'}>
+                    {t(`${app.locale}.TITLE`)}
+                  </p>
+                )}
               </Link>
             );
           })}
